@@ -1,0 +1,10 @@
+html,
+body,
+button,
+h1 {
+    margin: 10;
+    background-color: lightblue;
+    align-items: center;   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
