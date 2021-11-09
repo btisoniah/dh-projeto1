@@ -1,21 +1,28 @@
-var elementoLista = document.querySelector('ul');
-var elementoInput = document.querySelector('input');
-var elementoBotao = document.querySelector('button');
+ //var elementoLista = document.querySelector('ul');
+// var elementoInput = document.querySelector('input');
+// var elementoBotao = document.querySelector('button');
 
-const listaTarefas = [];
+function incluirElemenetoNaLista() {
+ 
+  var inserirValor = document.getElementById("novaTarefa").value //valor que for digitado na caixa... 
+  var li = document.createElement("li");
+  var x = document.createTextNode(inserirValor);
+  li.appendChild(x); 
+  document.getElementById("lista").appendChild(li);
+  document.getElementById("novaTarefa").value = ""; 
+  console.log(inserirValor)
+  
+  // var span = document.createElement("SPAN");
+  // var txt = document.createTextNode("\u00D7");
+  // span.className = "close";
+  // span.appendChild(txt);
+  // li.appendChild(span);
 
-function exibirTarefas() {
-
-  for (tarefa of listaTarefas) {
-    const itemTarefa = document.createElement('li')
-    const textodaTarefa = document.createTextNode(tarefa)
-    itemTarefa.appendChild(textodaTarefa)
-    elementoLista.appendChild(itemTarefa);
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
   }
 }
 
-function incluirTarefas() {
-  var textodaTarefa = elementoInput.value
-  listaTarefas.push(textodaTarefa)
-
-}

@@ -27,8 +27,12 @@ ul li{
     position: center;
     list-style: none;
     font-family:verdana;
+    background:lightgoldenrodyellow
 }
+ul li:hover {
+    background: lightslategrey;
+  }
 
-.footer {
+  .footer {
     background-color: rgb(120, 156, 221);
 }
