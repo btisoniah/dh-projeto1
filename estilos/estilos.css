@@ -8,6 +8,18 @@ h1 {
     text-align: center;
 }
 
+#novaTarefa{
+    width: 30%; 
+    height:30px;
+    border: none;
+    
+}
+
+button{
+    height: 30px;
+    width: 14%;
+    border:black 20px;
+}
 
 ul li{
     font-size: 25px;

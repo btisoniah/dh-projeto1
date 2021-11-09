@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List - DEVinHouse</title>
-    <link rel="stylesheet" href="estilos/estilos.css"> 
+    <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="icon" href="/dh-projeto1/imagens/homework.png" type="image/x-icon" />
-    <script src="scripts/script.js"> </script>
+
 </head>
+
 <body>
-    
-    <h1>Olá DEVinHousers!!! <br> <hr> </h1> 
-    
+
+    <h1>Olá DEVinHousers!!! <br>
+        <hr>
+    </h1>
+
     <div class=container>
         <h2> "ToDoList - Lista de Tarefas a Fazer"</h2>
-               <input id="novaTarefa" type="text" placeholder="Digite uma tarefa...."> 
-                <button id="button" onclick=adicionarTarefa()> Adicionar </button>
-            </input>
-        </div>
-        <div id="lista">
-            <ul>
-                <li>dfsafs</li>
-            </ul>
-        </div>
+        <input id="novaTarefa" type="text" placeholder="Digite uma tarefa....">
+        <button onclick="incluirTarefas()"> Adicionar </button>
+        </input>
+    </div>
+    <ul id="lista">
+        <li></li>
+    </ul>
 
-    </div> 
-    <footer>
+
+    </div>
+    <!-- <footer>
         <p class="footer">
-                Projeto 1 | Desenvolvido por Sonia no Curso Senai/ACATE DEVinHouse 
-            </p>
-    </footer>
+            Projeto 1 | Desenvolvido por Sonia no Curso Senai/ACATE DEVinHouse
+        </p>
+    </footer> -->
+    <script src="scripts/script.js"> </script>
+    <script src="scripts/todo.js"> </script>
+
 </body>
+
 </html>
