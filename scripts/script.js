@@ -11,7 +11,8 @@ function exibirTarefas (){
 }
 
 function adicionarTarefa(){ 
-const textoTarefa = elementoInput.value
-listaTarefas.push(textoTarefa)
-elementoInput.value = ''; //limpa o imput após adicionar tarefa 
+
+    var descricaoTarefa = document.getElementById("novaTarefa").value
+
+    var tarefa 
 }
