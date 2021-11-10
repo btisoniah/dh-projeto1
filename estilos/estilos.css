@@ -1,22 +1,65 @@
 html,
 body,
 h1 {
-    margin: 10;
-    background-color: lightblue;
     align-items: center;   
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
+#novaTarefa{
+    width: 20%; 
+    height:30px;
+    border: color black solid; 2px;
+    
+}
 
+button{
+    box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	background-color:#77d42a;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+}
+    .Button:hover {
+        background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+        background-color:#ffffff;
+    }
+    .Button:active {
+        position:relative;
+        top:1px;
+    }
+#exibirLista{
+
+background-color:rgb(183, 224, 155);
+line-height: 50px;
+width: 40%;
+height: 50%;
+position: absolute;
+margin-left: -100px;
+
+}
 ul li{
-    font-size: 25px;
+    margin-top: 20px;
+    font-size: 18px;
     cursor: pointer;
     position: center;
     list-style: none;
-    font-family:verdana;
 }
+ul li:hover {
+    align-content: center;
+    font-weight: bold;
+    background-color: lightgreen  }
 
-.footer {
+
+  .footer {
     background-color: rgb(120, 156, 221);
 }
