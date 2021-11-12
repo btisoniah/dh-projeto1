@@ -27,26 +27,36 @@ botaoAdd.onclick = function() {
             localStorage.setItem('tarefas', jasonLocalStorage);
                 }
         criarLista(valorTarefa.value);
-       
+       valorTarefa.value = ''; 
     }
 }
 
 function criarLista(lista) {
+    
+    
+
     var ul = document.getElementById('listaTarefas');
     var li = document.createElement('li');
     li.appendChild(document.createTextNode(lista));
     ul.appendChild(li);
     
-    var button = document.createElement('button');
-    button.innerHTML = "xxxxxx";
-    button.className = "btnItemExcluir";
-    button.style.marginLeft = '10px';
-    button.style.backgroundColor = 'red';
-    button.setAttribute("id", lista);
-    button.onclick = function() { excluirItem(this) };
-    li.appendChild(button);
+   
+   var buttonDel = document.createElement('button');
+    buttonDel.innerHTML = "X" //"<img src=../imagens/x.png>";
+    buttonDel.style.marginLeft = '10px';
+    buttonDel.setAttribute("id", lista);
+    buttonDel.onclick = function() { excluirItem(this) };
+
+     li.appendChild(buttonDel);
     
+ 
+} 
+
+function marcarFeito(elemento){
+
 }
+
+
 
 function excluirItem(elemento) {
     _local_storage = localStorage.getItem('tarefas');

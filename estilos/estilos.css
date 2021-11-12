@@ -6,14 +6,14 @@ h1 {
     text-align: center;
 }
 
-#novaTarefa{
+#tarefa{
     width: 20%; 
     height:30px;
-    border: color black solid; 2px;
-    
-}
+    border: color black solid; border-radius:10px;
+    background-color:lightgreen
+    }
 
-button{
+#botaoAdd{
     box-shadow:inset 0px 1px 0px 0px #caefab;
 	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
 	background-color:#77d42a;
@@ -26,10 +26,8 @@ button{
 	font-size:14px;
 	font-weight:bold;
 	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #aade7c;
 }
-    .Button:hover {
+    .botaoAdd:hover {
         background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
         background-color:#ffffff;
     }
@@ -37,11 +35,12 @@ button{
         position:relative;
         top:1px;
     }
-#exibirLista{
+
+   #exibirLista{
 
 background-color:rgb(183, 224, 155);
 line-height: 50px;
-width: 40%;
+width: 10%;
 height: 50%;
 position: absolute;
 margin-left: -100px;
@@ -49,11 +48,12 @@ margin-left: -100px;
 }
 ul li{
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     position: center;
     list-style: none;
-}
+    
+    }
 ul li:hover {
     align-content: center;
     font-weight: bold;
