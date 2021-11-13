@@ -4,14 +4,13 @@ var vetorTarefas = new Array();
 var jasonLocalStorage;
 var _local_storage;
 
-//criarLista(); 
-
+//funcao para criar a tarefa na lista de tarefas e salvar cada item no localStorage 
 botaoAdd.onclick = function() {
     var valorTarefa = document.getElementById('tarefa');
     _local_storage = localStorage.getItem('tarefas');
 
     if (formulario.checkValidity()) {
-        if (_local_storage === null || _local_storage.length === 0) 
+        if (_local_storage === null) 
         {
             var json = '{"tarefas": ["' + valorTarefa.value + '"]}';
             var objeto = JSON.parse(json);
@@ -27,59 +26,67 @@ botaoAdd.onclick = function() {
         criarLista(valorTarefa.value);
        valorTarefa.value = ''; 
     }
+    
 }
-
+//funcão para criar o item na lista, mostrar o check e mostrar o botão deletar 
 function criarLista(lista) {
-
     var ul = document.getElementById('listaTarefas');
     var li = document.createElement('li');
-    var input = document.createElement('input');
-    input.setAttribute('type', 'checkbox');
-    input.style.marginLeft = '30px'; 
-    li.appendChild(input); //inserir botao checked 
+    li.appendChild(criarBotaoCheckBox()); //inserir botao checked 
     li.appendChild(document.createTextNode(lista)); //criar elemento na na lista 
     ul.appendChild(li); //inserir o elemento na lista 
     li.appendChild(criaBotaoDeletar()); // inserir o botao deletar, chamar a função para deletar 
 
-    //funcao para deletar item da lista ao clicar no botão
+//funcao para deletar item da lista ao clicar no botão
 function criaBotaoDeletar(){ 
    var buttonDel = document.createElement('button');
     buttonDel.innerHTML = "X" 
     buttonDel.style.marginLeft = '30px';
     buttonDel.setAttribute("id", lista);
     buttonDel.onclick = function() { excluirItem(this)};
-   return buttonDel;
+    return buttonDel;
 }
-    
- 
-} 
-
-// function marcarFeito(elemento){
-//  {
-
-// }
-
-
-
+//funcao para criar botaoCheckBox
+function criarBotaoCheckBox() {
+    var buttonInput = document.createElement('input');
+    buttonInput.setAttribute('type', 'checkbox');
+    buttonInput.style.marginRight = '30px'; 
+    buttonInput.onchange = function() { marcarFeito(this)};
+    return buttonInput;
+    }
+}
+//funcao para excluir o item ao clicar no botãoDeletar 
 function excluirItem(elemento) {
    
-   var confirmar = confirm("Tem certeza que deseja excluir esta tarefa?")
-   if (confirmar == true)
-   {
-    _local_storage = localStorage.getItem('tarefas');
-    var objeto = JSON.parse(_local_storage);
-    vetorTarefas = objeto.tarefas;
+    var confirmar = confirm("Tem certeza que deseja excluir esta tarefa?")
+    if (confirmar == true)
+    {
+     _local_storage = localStorage.getItem('tarefas');
+     var objeto = JSON.parse(_local_storage);
+     vetorTarefas = objeto.tarefas;
+ 
+     var novo_array = vetorTarefas.filter(valor => valor !== elemento.id);
+ 
+     objeto.tarefas = novo_array;
+     _local_storage = JSON.stringify(objeto);
+     localStorage.setItem('tarefas', _local_storage);
+ 
+     elemento.parentElement.remove();
+    } 
+    else {
+        alert("Você desistiu de excluir a tarefa!")
+    }
+ 
+ }
+ 
+ 
 
-    var novo_array = vetorTarefas.filter(valor => valor !== elemento.id);
+ function marcarFeito(){
 
-    objeto.tarefas = novo_array;
-    _local_storage = JSON.stringify(objeto);
-    localStorage.setItem('tarefas', _local_storage);
+    const cbElement = document.querySelector('input[type=checkbox]')
+    if (cbElement.checked ==true) {
+        valor.Tarefa.setAttribute.text-decoration: 'line-through'
+    } 
+    
+ }
 
-    elemento.parentElement.remove();
-   } 
-   else {
-       alert("Você desistiu de excluir a tarefa!")
-   }
-
-}
