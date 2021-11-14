@@ -80,13 +80,15 @@ function excluirItem(elemento) {
  }
  
  
-
  function marcarFeito(){
-
-    const cbElement = document.querySelector('input[type=checkbox]')
-    if (cbElement.checked ==true) {
-        valor.Tarefa.setAttribute.text-decoration: 'line-through'
+    const buttonInput = document.querySelector('input[type=checkbox]')
+    if (buttonInput.checked === true) {
+        elmento.id.style.textDecorationLine = "line-through"
     } 
+    else
+    {
+        listaTarefas.style.textDecorationLine = "none"
+    }
     
  }
 
