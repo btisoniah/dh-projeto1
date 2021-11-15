@@ -4,7 +4,7 @@
     var jasonLocalStorage;
     var _local_storage;
 
-//     function recuperarItens(){ //ainda nao está funcional
+//     function recuperarItens(){ //ainda nao funciona
 //         let listaDeTarefas = []
 //         const listaRecuperada = localStorage.getItem('tarefas')
 //          if (listaRecuperada) {
