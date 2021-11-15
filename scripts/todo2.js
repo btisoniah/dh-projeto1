@@ -4,18 +4,18 @@
     var jasonLocalStorage;
     var _local_storage;
 
-//     function recuperarItens(){ //ainda nao funciona
-//         let listaDeTarefas = []
-//         const listaRecuperada = localStorage.getItem('tarefas')
-//          if (listaRecuperada) {
-//           listaDeTarefas = listaRecuperada
-//           for (let i = 0; i < listaDeTarefas.length; i++) {
-//             const item = listaDeTarefas[i]
-//                      }
-//                      criarLista(listaDeTarefas)
-//         }
-//     }
-//    recuperarItens();
+    function recuperarItens(){ //ainda nao funciona como deveria... 
+        let listaDeTarefas = []
+        const listaRecuperada = localStorage.getItem('tarefas')
+         if (listaRecuperada) {
+          listaDeTarefas = listaRecuperada
+          for (let i = 0; i < listaDeTarefas.length; i++) {
+            const item = listaDeTarefas[i]
+                     }
+                     criarLista(listaDeTarefas)
+        }
+    }
+   recuperarItens();
 
     botaoAdd.onclick = function() {//funcao para criar a tarefa na lista de tarefas e salvar cada item no localStorage 
         var valorTarefa = document.getElementById('tarefa');
