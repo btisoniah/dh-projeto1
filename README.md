@@ -15,6 +15,6 @@ Repositório para o primeiro projeto do curso DEVinHouse<br>
 
 <li>Quando o usuário marcar uma tarefa como realizada, o texto daquela linha deve ser tachado (line-through).</li>
 
-<li>A lista deve ser salva no "localStorage" do navegador (incluindo quais itens já foram realizados), e deve ser carregada sempre que a página for reaberta.. (check)</li>
+<li>A lista deve ser salva no "localStorage" do navegador (incluindo quais itens já foram realizados), e deve ser carregada sempre que a página for reaberta.. </li>
 
 <h3>Descrição completa do projeto: https://docs.google.com/document/d/1r4RzauI9OevPw6jCKvSXlPVzb0cG_1sPUSV69QQUB_o/edit#heading=h.dmr8q9imn0q6 </h3>
