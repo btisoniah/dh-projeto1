@@ -4,10 +4,14 @@ var vetorTarefas = new Array();
 var jasonLocalStorage;
 var _local_storage;
 
+
 //funcao para criar a tarefa na lista de tarefas e salvar cada item no localStorage 
 botaoAdd.onclick = function() {
     var valorTarefa = document.getElementById('tarefa');
     _local_storage = localStorage.getItem('tarefas');
+
+
+
 
     if (formulario.checkValidity()) {
         if (_local_storage === null) 
@@ -40,8 +44,8 @@ function criarLista(lista) {
 //funcao para deletar item da lista ao clicar no botão
 function criaBotaoDeletar(){ 
    var buttonDel = document.createElement('button');
-    buttonDel.innerHTML = "X" 
-    buttonDel.style.marginLeft = '30px';
+    buttonDel.innerHTML = "✘" 
+    buttonDel.style.marginLeft = '12px';
     buttonDel.setAttribute("id", lista);
     buttonDel.onclick = function() { excluirItem(this)};
     return buttonDel;
@@ -50,8 +54,9 @@ function criaBotaoDeletar(){
 function criarBotaoCheckBox() {
     var buttonInput = document.createElement('input');
     buttonInput.setAttribute('type', 'checkbox');
-    buttonInput.style.marginRight = '30px'; 
-    buttonInput.onchange = function() { marcarFeito(this)};
+    buttonInput.style.marginRight = '12px'; 
+    buttonInput.style.backgroundColor = "green"
+    buttonInput.onchange = function(eve) { marcarFeito(eve,this)};
     return buttonInput;
     }
 }
@@ -69,7 +74,7 @@ function excluirItem(elemento) {
  
      objeto.tarefas = novo_array;
      _local_storage = JSON.stringify(objeto);
-     localStorage.setItem('tarefas', _local_storage);
+     localStorage.setItem('tarefas', _local_storage); //gravar no lS
  
      elemento.parentElement.remove();
     } 
@@ -79,16 +84,18 @@ function excluirItem(elemento) {
  
  }
  
- 
- function marcarFeito(){
-    const buttonInput = document.querySelector('input[type=checkbox]')
-    if (buttonInput.checked === true) {
-        elmento.id.style.textDecorationLine = "line-through"
-    } 
-    else
-    {
-        listaTarefas.style.textDecorationLine = "none"
-    }
-    
- }
+ //função para ao clicar no ckeck box, marcar foto feito e riscar a linha
+        function marcarFeito(eve, element) {
+            if(eve.currentTarget.checked){
+                element.parentElement.style["text-decoration"] = 'line-through';
+            } else{
+                element.parentElement.style["text-decoration"] = 'none';
+            }
+        }
 
+        // function recuperarItens(){
+        //     var tarefasAll = localStorage.getItem('tarefasAll');
+        //     var tarefasTodas = JSON.parse(tarefasAll)
+        //     return tarefasTodas;
+        
+        // }
